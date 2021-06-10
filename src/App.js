@@ -10,17 +10,21 @@ function App() {
   const [name, setName] = useState('')
   const [data, setData] = useState({})
 
-  useEffect(()=>{
+  
+
+  const submit = (e) => {
+    e.preventDefault()
     fetch('https://api.github.com/users/' + name).then(res => res.json()).then(info => setData(info))
-  }, [name])
+  }
 
   return (
     <div class="container">
       <Header/>
 
-      <div class="right-side-header">
+      <form class="right-side-header" onSubmit={(e)=>{submit(e)}}>
         <input class="dark-mode-text" placeholder="Username" value={name} onChange={(e) => { setName(e.target.value) }} />
-      </div>
+        <button type='submit' class='search-button'>Search</button>
+      </form>
 
       <BasicInfo data={data}/>
       

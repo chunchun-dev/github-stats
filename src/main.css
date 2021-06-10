@@ -111,4 +111,15 @@ body {
 .basic-info img {
   border-radius: 50%;
 }
+
+.search-button {
+  cursor: pointer;
+  border: 5px var(--dark-desaturated-blue);
+  color: var(--white);
+  font-weight: 400;
+  background-color: #51556c;
+  padding: 9px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
 /*# sourceMappingURL=main.css.map */
