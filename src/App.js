@@ -4,6 +4,7 @@ import StatCardContainer from './components/StatCardContainer';
 import NameInput from './components/NameInput'
 import './main.css'
 import {useState, useEffect} from 'react'
+import RepoList from './components/RepoList';
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
       <BasicInfo data={data}/>
       
       <StatCardContainer data={data}/>
+
+      <RepoList name={name}/>
       
       <div class="attribution">
         *This project is neither maintained nor endorsed by GitHub
