@@ -21,15 +21,7 @@ function Repo({name, html_url, stargazers_count, watchers, forks, owner}) {
 
 
 
-function RepoList({name}) {
-
-    const [repos, setRepos] = useState([])
-
-    useEffect(() => {
-        
-        fetch(`https://api.github.com/users/${name}/repos`).then(res => res.json()).then(info => setRepos(info))
-
-    }, [name])
+function RepoList({repos}) {
 
     if (repos.length > 0) {
         return (

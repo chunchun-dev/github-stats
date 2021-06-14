@@ -10,12 +10,13 @@ function App() {
 
   const [name, setName] = useState('')
   const [data, setData] = useState({})
-
+  const [repos, setRepos] = useState([])
   
 
   const submit = (e) => {
     e.preventDefault()
     fetch('https://api.github.com/users/' + name).then(res => res.json()).then(info => setData(info))
+    fetch(`https://api.github.com/users/${name}/repos`).then(res => res.json()).then(info => setRepos(info))
   }
 
   return (
@@ -31,7 +32,7 @@ function App() {
       
       <StatCardContainer data={data}/>
 
-      <RepoList name={name}/>
+      <RepoList repos={repos}/>
       
       <div class="attribution">
         *This project is neither maintained nor endorsed by GitHub
