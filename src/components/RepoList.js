@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import './RepoList.css'
 
-function Repo({name, url, stargazers_count, watchers, forks, owner}) {
+function Repo({name, html_url, stargazers_count, watchers, forks, owner}) {
     return (
-        <a href={url} target='_empty' className='repo-link'>
+        <a href={html_url} target='_empty' className='repo-link'>
             <div className='repo-card'>
                 <img src={owner.avatar_url} height={'150vw'} className='res-prof'/>
                 <div className="repo-details">
