@@ -19,8 +19,8 @@ function StatPage({data,username,repos}) {
             <a href={data.html_url} target='_empty'>@{data.login}</a>
             <div className={styles.stats}>
                 <StatCard data={data.public_repos} dataName={'Public Repos'} />
-                <StatCard data={data.public_repos} dataName={'Public Repos'} />
-                <StatCard data={data.public_repos} dataName={'Public Repos'} />
+                <StatCard data={data.followers} dataName={'Followers'} />
+                <StatCard data={data.following} dataName={'Following'} />
             </div>
             <ReposList repos={repos}/>
         </div>
